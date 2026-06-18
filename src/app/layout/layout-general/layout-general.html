@@ -1,0 +1,54 @@
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+
+                <!-- Logo -->
+                <a href="#" class="text-xl font-bold">
+                    MiApp
+                </a>
+
+                <!-- Menú escritorio -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gray-200">Inicio</a>
+                    <a href="#" class="hover:text-gray-200">Productos</a>
+                    <a href="#" class="hover:text-gray-200">Servicios</a>
+                    <a href="#" class="hover:text-gray-200">Contacto</a>
+                </div>
+
+                <!-- Botón móvil -->
+                <button id="menu-btn" class="md:hidden" (click)="desplegarMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+            </div>
+
+            <!-- Menú móvil -->
+            @if (verMenu()) {
+            <div id="mobile-menu" class="md:hidden pb-4">
+                <a href="#" class="block py-2 hover:text-gray-200">Inicio</a>
+                <a href="#" class="block py-2 hover:text-gray-200">Productos</a>
+                <a href="#" class="block py-2 hover:text-gray-200">Servicios</a>
+                <a href="#" class="block py-2 hover:text-gray-200">Contacto</a>
+            </div>
+            }
+        </div>
+    </nav>
+
+    <!-- Contenido -->
+    <main class="flex-1 max-w-7xl mx-auto w-full p-6">
+        <router-outlet />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        © 2026 MiApp
+    </footer>
+
+</body>

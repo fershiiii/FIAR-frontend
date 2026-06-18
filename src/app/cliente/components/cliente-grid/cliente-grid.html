@@ -1,0 +1,16 @@
+<div class="container mx-auto px-4 py-6">
+    <h1 class="text-3xl font-bold mb-6">
+        Clientes
+    </h1>
+
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        @for (cliente of clientes(); track $index) {
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+            <app-cliente-card [cliente]="cliente"/>
+        </div>
+        }
+    </div>
+</div>
