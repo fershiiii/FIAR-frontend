@@ -15,4 +15,13 @@ export class ClienteService {
   obtenerClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${this.apiUrl}/clientes`);
   }
+
+  registrarClientes(): Observable<Cliente> {
+    const nuevoCliente: Cliente = {
+      id: 0,
+      nombre: 'Nuevo Cliente',
+      activo: true,
+    };
+    return this.http.post<Cliente>(`${this.apiUrl}/clientes`, nuevoCliente);
+  }
 }
